@@ -53,23 +53,6 @@ public class InventoryList : MonoBehaviour
 
     }
 
-    private void CopyInventory()
-    {
-        //Set our array to match the size of our list
-        copiedItems = new string[currentItems.Count];
-
-        //for - basically a while loop with a built in counter
-        //for as long as i, (starting at 0), is less than the size of our list...
-        for (int i = 0; i < currentItems.Count; i++)
-        {
-            //copy the item at position i in our list, to the copy array (also at position i)
-            copiedItems[i] = currentItems[i];
-
-            Debug.Log("Copied the item at position " + i);
-            //When we reach here, our code increases i by 1 automatically, and checks the loop again
-        }
-    }
-
     private void AddRandomItem()
     {
         //Get a random position in our Item array
@@ -115,6 +98,24 @@ public class InventoryList : MonoBehaviour
 
         //We only reach this code when "(currentItems.Count > 10)" is no longer true
         Debug.Log(numberRemoved + " items were removed to reduce the inventory to 10 items.");
+    }
+
+
+    private void CopyInventory()
+    {
+        //Set our array to match the size of our list
+        copiedItems = new string[currentItems.Count];
+
+        //for - basically a while loop with a built in counter
+        //for as long as i, (starting at 0), is less than the size of our list...
+        for (int i = 0; i < currentItems.Count; i++)
+        {
+            //copy the item at position i in our list, to the copy array (also at position i)
+            copiedItems[i] = currentItems[i];
+
+            Debug.Log("Copied the item at position " + i);
+            //When we reach here, our code increases i by 1 automatically, and checks the loop again
+        }
     }
 
     private void SummariseContents()
